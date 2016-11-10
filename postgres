@@ -9,3 +9,80 @@ PostgreSQL (9.6.1)
 
 
 static ip address:  104.154.102.145
+
+TUTORIAL  2016-11-10
+
+
+REATE DATABASE
+postgres=# \l
+                                  List of databases
+   Name    |  Owner   | Encoding |   Collate   |    Ctype    |   Access privileges   
+-----------+----------+----------+-------------+-------------+-----------------------
+ mydb3     | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ postgres  | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ template0 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
+           |          |          |             |             | postgres=CTc/postgres
+ template1 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
+           |          |          |             |             | postgres=CTc/postgres
+(4 rows)
+
+ \c mydb3;
+You are now connected to database "mydb3" as user "postgres".
+mydb3=# create schema mydb3schema;
+CREATE SCHEMA
+mydb3=# create table mydb3schema.table1 (id integer, password CHAR (10));
+CREATE SCHEMA
+mydb3=# create table mydb3schema.table1 (id integer, password CHAR (10));
+CREATE TABLE
+mydb3=# select * from pg_catalog.pg_tables;
+
+<ables where schemaname != 'information_schema' and schemaname != 'pg_catalog';                              
+ schemaname  | tablename | tableowner | tablespace | hasindexes | hasrules | hastriggers | rowsecurity 
+-------------+-----------+------------+------------+------------+----------+-------------+-------------
+ mydb3schema | table1    | postgres   |            | f          | f        | f           | f
+(1 row)
+
+
+mydb3=# insert into mydb3schema.table1 values (1,'1');
+INSERT 0 1
+
+mydb3=# select * from mydb3schema.table1;
+ id |  password  
+----+------------
+  1 | 1         
+  2 | 2         
+(2 rows)
+
+mydb3=# truncate mydb3schema.table1;
+TRUNCATE TABLE
+mydb3=# select * from mydb3schema.table1;
+ id | password 
+----+----------
+(0 rows)
+mydb3=# insert into mydb3schema.table1 values (3,'3');
+INSERT 0 1
+mydb3=# insert into mydb3schema.table1 values (4,'4');
+INSERT 0 1
+mydb3=# select * from mydb3schema.table1;             
+ id |  password  
+----+------------
+  3 | 3         
+  4 | 4         
+(2 rows)
+
+mydb3=# delete from mydb3schema.table1;  
+DELETE 2
+
+
+mydb3=# drop table mydb3schema.table1;
+DROP TABLE
+mydb3=# 
+
+mydb3=# drop table mydb3schema.table1;
+DROP TABLE
+mydb3=# select * from mydb3schema.table1;
+ERROR:  relation "mydb3schema.table1" does not exist
+LINE 1: select * from mydb3schema.table1;
+                      ^
+mydb3=# \q
+could not save history to file "/home/postgres/.psql_history": No such file or directory
