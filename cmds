@@ -1,2 +1,6 @@
 This is where I will keep the BSD Commands that I learn
 ls - list
+cal - calendar
+mkdir - make directory
+rmdir - remove directory
+cp - copy
