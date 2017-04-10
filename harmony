@@ -1,3 +1,6 @@
 Harmony -- I just created the harmony repository and am not sure why I can't create new files like I can here.  Anyway, I will use this space 
 to gather requirements.  I'm gonna delete the harmony project until I know how to set up.  For now, I just need a coding workspace that will work on the web.
 
+Harmony is a project for pulling various streams of data together to be presented in a command console format.
+The idea is to have a single dashboard with several buttons (like the M-audio trigger finger) that you can call up different views in an instant.
+
