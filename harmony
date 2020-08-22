@@ -4,3 +4,10 @@ to gather requirements.  I'm gonna delete the harmony project until I know how t
 Harmony is a project for pulling various streams of data together to be presented in a command console format.
 The idea is to have a single dashboard with several buttons (like the M-audio trigger finger) that you can call up different views in an instant.
 
+### 2020-08-22
+Revisiting this file after over 2 years.  Had forgotten all about this project idea.   Recently learned about "data lakes".  Harmony could be a data lake project.  The "command console" is
+an interface.  The data needs to be gatherered and prepared in some location, and also documented.  That location would be a "data lake".  Or it could be a simple code repository
+like this one on GitHub.  I will need to revisit this project proposal again soon.  RL
+
+
+
